@@ -1,0 +1,11 @@
+{
+	"index.html": {
+		"resources": [
+			"img/0303.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.css",
+			"img/0304.png"
+		]
+	}
+}

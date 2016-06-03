@@ -1,0 +1,231 @@
+﻿/*样式初始化*/
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select, hr {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    /* font: 12px "宋体", "Arial Narrow", HELVETICA; */
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+/* BUYFlow基本样式*/
+html, body {
+    font-size: 14px;
+    height: 100%;
+
+}
+
+.main {
+    height: 100%;
+}
+
+.cliTop {
+    width: 100%;
+    height: 35%;
+    background-color: #e64453;
+}
+
+.tips {
+
+    width: 100%;
+    height: 43px;
+    background-image: url("../img/tips.png");
+    background-repeat: no-repeat;
+    background-position: 15px 0px;
+    background-size: 78px 43px;
+}
+
+.cliText {
+    width: 239px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.cliText p {
+    height: 30px;
+    line-height: 30px;
+}
+
+.cliText span {
+    /*    text-decoration: underline;*/
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.two-dimension {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto;
+    background-image: url("../img/dimension.png");
+    background-repeat: no-repeat;
+    background-size: 82px 82px;
+}
+
+.cliBot {
+    height: 636px;
+    background-image: url("../img/step.png");
+    background-repeat: no-repeat;
+    background-size: 100% 636px;
+}
+
+/*WeChatBuy 基本样式*/
+
+.topImg {
+    height: 484px;
+    background-image: url("../img/weixingou.png");
+    background-repeat: no-repeat;
+    background-size: 100% 484px;
+}
+
+.main h4 {
+    height: 40px;
+    line-height: 40px;
+    color: #3bac66;
+    padding-left: 20px;
+    border-top: 1px solid #c8c7cc;
+    border-bottom: 1px solid #c8c7cc;
+}
+
+.main input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    padding-left: 46px;
+    outline: none;
+    border-bottom: 1px solid #c8c7cc;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 24px 8px;
+}
+
+.consigneeName {
+    background-image: url("../img/1.png");
+}
+
+.consigneeTel {
+    background-image: url("../img/2.png");
+}
+
+.consigneeW {
+    background-image: url("../img/3.png");
+}
+
+.address {
+    background-image: url("../img/3.png");
+}
+
+.phone {
+    background-image: url("../img/4.png");
+}
+
+.nameid {
+    background-image: url("../img/5.png");
+}
+
+.inBox {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.BuyValue, .remark, .blank, .money {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #c8c7cc;
+    text-indent: 2em;
+    color: #3e3e3e;
+}
+
+.BuyValue {
+    overflow: hidden;
+}
+
+.rightV {
+    color: #3bac66;
+    float: right;
+    padding-right: 46px;
+}
+
+.rightV button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    outline: none;
+    border: 1px solid #55524d;
+}
+
+.leftBut {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.rightBut {
+    border-radius: 0px 8px 8px 0px;
+}
+
+.rightV p {
+
+    width: 40px;
+    border-top: 1px solid #55524d;
+    border-bottom: 1px solid #55524d;
+}
+
+.blank {
+    background: #f5f5f5;
+}
+
+.money {
+/*    position: fixed;*/
+    bottom: 0px;
+    display: -webkit-box;
+}
+
+.monTeft, .monRight {
+    width: 50%;
+    color: #fff;
+    text-align: center;
+}
+
+.monTeft {
+    background: #e8981b;
+}
+
+.monRight {
+    background: #d04e50;
+}

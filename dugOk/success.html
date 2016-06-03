@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript"
+	src="../../static/views/jquery-easyui-1.4.1/jquery.min.js"></script>
+<link href="css/mui.css" rel="stylesheet" />
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+	$(function() {
+		init();
+	})
+	function GetRequest() {
+		var url = location.search; //获取url中"?"符后的字串
+		var theRequest = new Object();
+		if (url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			strs = str.split("&");
+			for (var i = 0; i < strs.length; i++) {
+				theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	function init() {
+
+		var Request = new Object();
+		Request = GetRequest();
+		var orderno = Request['orderno'];//getvalue("code");
+		$("#orderno").html(orderno);
+	}
+	function confirm(){
+		window.location.href='/bkscan/pages/posbuy.html';
+	}
+</script>
+
+<style type="text/css">
+.okImg {
+	margin-bottom: 2em;
+}
+
+.data {
+	padding: 0 2em;
+}
+
+.serialNum {
+	color: #d04e50;
+}
+
+.hint {
+	color: #000000;
+	line-height: 2em;
+}
+
+.headerName {
+	display: inline-block;
+	width: 4em;
+	text-align: end;
+	color: #b3b3b3;
+}
+
+.foo {
+	margin-top: 1em;
+}
+
+.foo span {
+	line-height: 2em;
+}
+
+.btn {
+	display: block;
+	margin: 0 auto;
+	width: 8em;
+	height: 2em;
+	line-height: 2em;
+	color: #fff;
+	background-image: url(img/0304.png);
+	background-size: 8em 2em;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"
+			style="color: #fff;"></a>
+		<h1 class="mui-title" style="color: #fff;">订购成功</h1>
+	</header>
+	<div class="mui-content">
+		<h3 style="text-align: center; padding: 2em 0em; color: #d04e50;">订购成功</h3>
+		<div id="" style="text-align: center;">
+			<img src="img/0303.png" style="width: 10em;" class="okImg" />
+		</div>
+
+		<div class="data">
+			订单号码：<span class="serialNum" id="orderno">10365232324<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（付款时请注明订单编号）
+			</span>
+			<p class="hint">请尽快将货款汇到收付宝收款账户，并注明订单号码</p>
+
+			<div id="" class="foo">
+				<span id="" class="headerName"> 开户名： </span> <span>收付宝电子商务有限公司</span>
+				<br /> <span id="" class="headerName"> 账&nbsp;&nbsp;&nbsp;号：
+				</span> <span>600102712322322</span> <br /> <span id="" class="headerName">
+					开户行： </span> <span>北京青年路支行</span> <br />
+			</div>
+		</div>
+
+		<div id="" style="padding: 2em 0;">
+			<div class="btn " onclick="confirm()">确认</div>
+		</div>
+	</div>
+
+</body>
+</html>

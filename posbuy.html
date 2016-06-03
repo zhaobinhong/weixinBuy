@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<meta name="Author" content="Bankeys-Hovace" />
+		<meta name="Copyright" content="keyPos " />
+		<meta name="description" content="pos购买" />
+		<!--<link rel="stylesheet" href="css/index.css">-->
+		<script type="text/javascript" src="../static/views/jquery-easyui-1.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../static/views/jquery-easyui-1.4.1/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../static/views/jquery-easyui-1.4.1/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../static/views/jquery-easyui-1.4.1/themes/color.css">
+		<link rel="stylesheet" type="text/css" href="../static/views/jquery-easyui-1.4.1/demo/demo.css">
+		<script type="text/javascript" src="../static/views/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../static/views/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+		<title></title>
+
+		<style type="text/css">
+			/*样式初始化*/
+			
+			body,
+			ol,
+			ul,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			th,
+			td,
+			dl,
+			dd,
+			form,
+			fieldset,
+			legend,
+			input,
+			textarea,
+			select,
+			hr {
+				margin: 0;
+				padding: 0
+			}
+			
+			body {
+				/* font: 12px "宋体", "Arial Narrow", HELVETICA; */
+				background: #fff;
+				-webkit-text-size-adjust: 100%;
+			}
+			
+			a {
+				color: #2d374b;
+				text-decoration: none
+			}
+			
+			a:hover {
+				color: #cd0200;
+				text-decoration: underline
+			}
+			
+			em {
+				font-style: normal
+			}
+			
+			li {
+				list-style: none
+			}
+			
+			img {
+				border: 0;
+				vertical-align: middle
+			}
+			
+			table {
+				border-collapse: collapse;
+				border-spacing: 0
+			}
+			
+			p {
+				word-wrap: break-word
+			}
+			/* BUYFlow基本样式*/
+			
+			html,
+			body {
+				font-size: 14px;
+				height: 100%;
+			}
+			
+			.main {
+				height: 100%;
+			}
+			
+			.cliTop {
+				width: 100%;
+				height: 35%;
+				background-color: #e64453;
+			}
+			
+			.tips {
+				width: 100%;
+				height: 43px;
+				background-image: url("img/tips.png");
+				background-repeat: no-repeat;
+				background-position: 15px 0px;
+				background-size: 78px 43px;
+			}
+			
+			.cliText {
+				width: 239px;
+				color: #fff;
+				margin: 0 auto;
+			}
+			
+			.cliText p {
+				height: 30px;
+				line-height: 30px;
+			}
+			
+			.cliText span {
+				/*    text-decoration: underline;*/
+				color: #000;
+				font-size: 22px;
+				font-weight: bold;
+			}
+			
+			.two-dimension {
+				width: 82px;
+				height: 82px;
+				margin: 0 auto;
+				background-image: url("img/dimension.png");
+				background-repeat: no-repeat;
+				background-size: 82px 82px;
+			}
+			
+			.cliBot {
+				height: 636px;
+				background-image: url("img/step.png");
+				background-repeat: no-repeat;
+				background-size: 100% 636px;
+			}
+			/*WeChatBuy 基本样式*/
+			
+			.topImg {
+				height: 484px;
+				background-image: url("img/weixingou.png");
+				background-repeat: no-repeat;
+				background-size: 100% 484px;
+			}
+			
+			.main h4 {
+				height: 40px;
+				line-height: 40px;
+				color: #3bac66;
+				padding-left: 20px;
+				border-top: 1px solid #c8c7cc;
+				border-bottom: 1px solid #c8c7cc;
+			}
+			
+			.main input {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				border: none;
+				padding-left: 46px;
+				outline: none;
+				border-bottom: 1px solid #c8c7cc;
+				background-repeat: no-repeat;
+				background-size: 20px;
+				background-position: 24px 8px;
+			}
+			
+			.consigneeName {
+				background-image: url("img/1.png");
+			}
+			
+			.consigneeTel {
+				background-image: url("img/2.png");
+			}
+			
+			.consigneeW {
+				background-image: url("img/3.png");
+			}
+			
+			.address {
+				background-image: url("img/3.png");
+			}
+			
+			.phone {
+				background-image: url("img/4.png");
+			}
+			
+			.nameid {
+				background-image: url("img/5.png");
+			}
+			
+			.inBox {
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.BuyValue,
+			.remark,
+			.blank,
+			.money {
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid #c8c7cc;
+				text-indent: 2em;
+				color: #3e3e3e;
+			}
+			
+			.BuyValue {
+				overflow: hidden;
+			}
+			
+			.rightV {
+				color: #3bac66;
+				float: right;
+				padding-right: 46px;
+			}
+			
+			.rightV button {
+				width: 24px;
+				height: 24px;
+				background: none;
+				outline: none;
+				border: 1px solid #55524d;
+			}
+			
+			.leftBut {
+				border-radius: 8px 0px 0px 8px;
+			}
+			
+			.rightBut {
+				border-radius: 0px 8px 8px 0px;
+			}
+			
+			.rightV p {
+				width: 40px;
+				border-top: 1px solid #55524d;
+				border-bottom: 1px solid #55524d;
+			}
+			
+			.blank {
+				background: #f5f5f5;
+			}
+			
+			.money {
+				/*    position: fixed;*/
+				bottom: 0px;
+				display: -webkit-box;
+			}
+			
+			.monTeft,
+			.monRight {
+				width: 50%;
+				color: #fff;
+				text-align: center;
+			}
+			
+			.monTeft {
+				background: #e8981b;
+			}
+			
+			.monRight {
+				background: #d04e50;
+			}
+			
+			.pp::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: red;
+			}
+			
+		
+			.hint{
+				display: none;
+				z-index: 1000;
+				background: red;
+				border-radius: 10px;
+				width: 20em;
+				height: 10em;	
+				position:absolute;
+				top:70%;
+				left:50%;
+				margin-top:-5em;
+				margin-left:-10em;
+				opacity: 1;
+			
+			}
+			.hint header{
+				border-radius: 10px  10px 0 0;
+				height: 2em;
+				line-height: 2em;
+				text-align: center;
+				background: #d04e50;
+				color: #fff;
+				
+			}
+			.hintData{
+				height: 100%;
+				padding: 1em;
+				background: #F9F9F9;
+				border-radius: 0 0 10px  10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<form id="form">
+				<div class="topImg"></div>
+				<hr style="height: 14px; border: none; border-top: 1px solid #ecebec; background: #f5f5f5">
+				<div class="inBox">
+					<h4>请填写购买信息</h4>
+					<input class="consigneeName inp" type="text" value="" name="name" id="name" placeholder="收货人姓名" onblur="if(value==''){this.placeholder='输入信息不能为空';this.className+=' pp'}"> 
+					<input class="consigneeTel inp" type="tel" value="" name="tel" id="tel" placeholder="收货人手机号" onblur="if(value==''){this.placeholder='输入信息不能为空';this.className+=' pp'}" >
+					<input class="address " type="text" value="" name="address" id="address" placeholder="收货地址" onblur="if(value==''){this.placeholder='输入信息不能为空';this.className+=' pp'}">
+					<input class=" phone" type="tel" value="" name="phone" id="phone" placeholder="APP注册手机号" onblur="if(value==''){this.placeholder='输入信息不能为空';this.className+=' pp'}"> 
+					<input class=" nameid" type="text" value="" name="nameid" id="nameid" placeholder="商户名称" onblur="if(value==''){this.placeholder='输入信息不能为空';this.className+=' pp'}">
+					<div class="BuyValue">
+						购买数量
+						<div class="rightV">
+							<button type="button" id="minus" class="leftBut">-</button>
+							<input id="val" style="padding:0;width: 2em; border: none; color: #3bac66; text-align: center" type="text" value="1" name="value">
+							<button type="button" id="add" class="rightBut">+</button>
+						</div>
+					</div>
+					<div class="remark" style="margin-bottom: 10px">
+						<span style="width: 20%">备注：</span><input style="width: 70%; padding-left: 0px; background: none; border-bottom: 0px;" type="text" name="remark" id="remark">
+					</div>
+					<!--<div class="blank"></div>-->
+					<div class="money">
+						<div class="monTeft">
+							应付金额：<span id="mone">0.01</span>
+						</div>
+						<div class="monRight" id="buy">立即购买</div>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+		<div class="hint" id="hint">
+			<header>提示</header>
+			<div id="hintData" class="hintData">信息有误</div>
+		</div>
+	<!--	<div class="shade" id="shade">
+		
+		</div>-->
+
+
+
+		<script type="text/javascript">
+			/* function GetRequest() {
+					var url = location.search; //获取url中"?"符后的字串
+					var theRequest = new Object();
+					if (url.indexOf("?") != -1) {
+						var str = url.substr(1);
+						strs = str.split("&");
+						for(var i = 0; i < strs.length; i ++) {
+							theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+						}
+					}
+					return theRequest;
+				} */
+			/* function init(){
+				
+				var Request = new Object(); 
+				Request = GetRequest(); 
+				
+					var code = Request['code'];//getvalue("code");
+					$.ajax({
+						type : "post",
+						url : "/bkadmin/pos/getAccessToken",
+							//"https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN",
+						async : false,
+						dataType : "json",
+						data : {
+							code:code
+						},
+						success : function(data) {
+							console.log(data);
+							openid = data.openid;
+						},
+						error : function(XMLHttpRequest, textStatus, errorThrown) {
+							//$.messager.alert("提示信息", "查询出现错误 ！", 'error');
+						}
+					}) 
+				} */
+			window.onload = function() {
+				/* init(); */
+				//var openid = "";
+				var udid = "";
+				var minus = document.getElementById("minus"),
+					add = document
+					.getElementById("add"),
+					b = document.getElementById("val"),
+					mone = document
+					.getElementById("mone"),
+					buy = document
+					.getElementById("buy"),
+					y = mone.innerHTML;
+				minus.onclick = function() {
+					if (b.value && b.value > 1) {
+						var i = b.value;
+						i--;
+						b.value = i;
+						mone.innerHTML = y * i;
+					}
+				};
+				add.onclick = function() {
+					if (b.value && b.value > 0) {
+						var i = b.value;
+						i++;
+						b.value = i;
+						mone.innerHTML = y * i;
+					}
+				};
+				/*点击立即购买*/
+				buy.onclick = function() {
+					
+					
+					//wakeWeChat4P(paramstest);
+					//return ;
+					var name = document.getElementById("name").value;
+					var tel = document.getElementById("tel").value;
+					var address = document.getElementById("address").value;
+					var phone = document.getElementById("phone").value;
+					var nameid = document.getElementById("nameid").value;
+					var val = document.getElementById("val").value;
+					var remark = document.getElementById("remark").value;
+					var mone = document.getElementById("mone").innerHTML;
+					/*if ("" == name) {
+						$.messager.alert("提示", "收货人姓名不能为空", "info");
+						//alert("收货人姓名不能为空");
+						return;
+					}
+					if ("" == tel) {
+						$.messager.alert("提示", "收货人手机号不能为空", "info");
+						//alert("收货人手机号不能为空");
+						return;
+					}
+					if ("" == address) {
+						$.messager.alert("提示", "收货地址不能为空", "info");
+						//alert("收货地址不能为空");
+						return;
+					}
+					if ("" == phone) {
+						$.messager.alert("提示", "APP注册手机号不能为空", "info");
+						//alert("APP注册手机号不能为空");
+						return;
+					}
+					if ("" == nameid) {
+						$.messager.alert("提示", "商户名称不能为空", "info");
+						//	alert("商户名称不能为空");
+						return;
+					}*/
+					//console.log("name:"+name+"|"+"tel:"+tel+"|"+"address:"+address+"|"+"phone:"+phone+"|");
+					//console.log("nameid:"+nameid+"|"+"val:"+val+"|"+"remark:"+remark+"|"+"mone:"+mone);
+					// 编辑窗口
+					/* $.ajax({
+						type : "post",
+						url : "/bkadmin/pos/refresheorder",
+						async : false,
+						dataType : "json",
+						data : {
+							orderno : 'all'
+						},
+						success : function(data) {
+
+						},
+						error : function(XMLHttpRequest, textStatus, errorThrown) {
+							//$.messager.alert("提示信息", "查询出现错误 ！", 'error');
+						}
+					})
+					return; */
+					$.ajax({
+						type: "post",
+						url: "/bkadmin/pos/addPosOrder",
+						async: false,
+						dataType: "json",
+						data: {
+							name: name,
+							tel: tel,
+							address: address,
+							phone: phone,
+							nameid: 　nameid,
+							val: val,
+							remark　: 　remark,
+							mone　: 　mone * 100,
+							paytype: '800207', //800207 微信公共号支付
+							//openid : openid,
+							udid: udid
+						},
+						success: function(data) {
+							//alert(data.success);
+							if (data.success == false) {
+								$.messager.alert("提示", data.message, "info");
+								//alert(data.message);
+								/* if(data.data.respcd=="0000"){
+									$.messager.alert("提示信息", data.data.resperr, 'info');
+								}else{
+									$.messager.alert("提示信息", data.data.resperr, 'err');
+								} */
+							} else {
+								window.location.href = '/bkscan/pages/dugOk/success.html?orderno=' + data.data.orderno;
+								//alert(data.data.orderno);
+							}
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							//$.messager.alert("提示信息", "查询出现错误 ！", 'error');
+						}
+					})
+				}
+			}
+			
+			
+			
+			window.onload=function(){
+				var hint=document.getElementById("hint");
+				hint.onclick=function(){
+					
+					hint.style.display="none";
+				}
+			}
+		</script>
+	</body>
+
+</html>
